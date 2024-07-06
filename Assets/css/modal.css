@@ -1,0 +1,156 @@
+.btn-add {
+  padding: 0 2px;
+  margin-bottom: 1px;
+  height: 30px;
+  line-height: 10px;
+  border: none;
+  color: var(--color-dark);
+  background: var(--color-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.btn-add:hover {
+  color: var(--color-white);
+}
+
+.overlay {
+  background: rgba(32, 32, 32, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+
+.popup {
+  background-color: var(--color-white);
+  box-shadow: 6px 7px 10px 2px rgba(32, 32, 32, 0.6);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+
+  transition: 0.3s ease all;
+  transform: scale(0.7);
+  opacity: 1;
+}
+
+.popup .btn-close {
+  background-color: var(--color-white);
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  color: var(--color-dark);
+  transition: 0.3s ease all;
+}
+
+.popup .btn-close:hover {
+  color: var(--color-primary);
+}
+
+.popup h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.popup h4 {
+  font-size: 26px;
+  font-weight: 200;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.popup form .content-input {
+  opacity: 0;
+}
+
+.popup form .content-input input {
+  background-color: var(--color-white);
+  width: 100%;
+  margin-bottom: 20px;
+  height: 52px;
+  line-height: 52px;
+  font-size: 18px;
+  text-align: center;
+  color: var(--color-dark);
+  border: 1px solid #bbbbbb;
+}
+
+.popup form .btn-submit {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  color: var(--color-dark);
+  background: var(--color-primary);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.popup form .btn-submit:hover {
+  color: var(--color-white);
+}
+
+.popup.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popup.active h3 {
+  animation: entradaTitulo 0.8s ease 0.5s forwards;
+}
+
+.popup.active h4 {
+  animation: entradaSubtitulo 0.8s ease 0.5s forwards;
+}
+
+.popup.active .content-input {
+  animation: entradaInputs 1s ease 1s forwards;
+}
+
+@keyframes entradaTitulo {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaSubtitulo {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaInputs {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
